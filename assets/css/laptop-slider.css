@@ -1,0 +1,79 @@
+.laptop-slider{
+  background: var(--preto-cinzeado-escuro);
+  overflow: auto;
+  position: relative;
+  padding: 7.8125rem 0 6.25rem;
+  width: 100%;
+}
+.slideshow{
+  margin: 0 auto;
+  max-width: 915px;
+  position: relative;
+  white-space: nowrap;
+}
+.js .slideshow{
+  overflow: hidden;
+}
+.slideshow > *{
+  display: inline-block;
+  transition: all .5s ease-out;
+}
+.js .slideshow > *{
+  opacity: 0;
+}
+.js .slideshow > .active{
+  position: absolute;
+  left: 0;
+  opacity: 1;
+}
+.slideshow img{
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.slideshow__nav{  
+  display: none;
+}
+.js .slideshow__nav{
+  display: block;
+}
+.js .slideshow__nav button{
+  background-color: transparent;
+  border: none;
+  color: var(--branco);
+  cursor: pointer;
+  position: absolute;
+  padding: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+}
+.thumb{
+  display: flex;
+  justify-content: center;
+}
+.thumb > *{
+  background-color: var(--branco);
+  border-radius: 50%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}
+.thumb > .active{
+  background-color: var(--verde-claro);
+}
+.js .prev{
+  left: 10px;
+}
+.js .next{
+  right: 10px;
+}
+@media screen and (min-width:960px){
+  .js .prev{
+    left: 6%;
+  }
+  .js .next{
+    right: 6%;
+  }
+}

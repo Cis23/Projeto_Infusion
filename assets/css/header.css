@@ -1,0 +1,124 @@
+.header{
+  align-items: center;
+  background-color: var(--branco);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+}
+.js .header{
+  position: fixed;
+  top: 0;
+}
+.header__logo{
+  background-color: var(--verde-claro);
+  color: var(--branco);
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 1.25rem;
+  text-transform: uppercase;
+}
+.header__btnMenu{
+  display: none;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  margin-right: 1rem;
+  padding: 1rem 1.5rem;
+}
+.header__btnMenu:focus{
+  outline: none;
+}
+.js .header__btnMenu{
+  display: flex;
+}
+.header__btnMenu-text{
+  position: absolute;
+  top: -5000px;
+}
+.iconMenu{
+  display: block;
+  border-top: 3px solid var(--preto-cinzeado-claro);
+  transition: all .3s ease-out;
+  width: 30px;
+}
+.iconMenu::before, 
+.iconMenu::after{
+  content: '';
+  background: var(--preto-cinzeado-claro);
+  display: block;
+  height: 3px;
+  margin: 5px 0;
+  position: relative;
+  transition: all .3s ease-out;
+  width: 30px;
+}
+#header__nav.active .iconMenu{
+  border-color: transparent;
+}
+#header__nav.active .iconMenu::before{
+  transform: rotate(130deg);
+}
+#header__nav.active .iconMenu::after{
+  transform: rotate(-130deg);
+  top: -8px;
+}
+.header__menu-list{
+  background-color: var(--preto-cinzeado-claro);
+  position: absolute;
+  left: 0;
+  top: 76px;
+  text-align: center;
+  width: 100%;
+}
+.js .header__menu-list{
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: all .5s ease;
+}
+.js #header__nav.active .header__menu-list{
+  height: calc(100vh - 76px);
+  overflow: auto;
+  visibility: visible;
+}
+.header__menu-list-link{
+  color: var(--cinza-claro-escurecido);
+  border-bottom: 1px solid var(--branco-transparente);
+  display: block;
+  font-size: 0.875rem;
+  padding: 1.7rem;
+  text-transform: uppercase;
+}
+@media screen and (min-width:1024px) {
+  .header{
+    position: static;
+    justify-content: flex-start;
+  }
+  .header__logo{
+    width: 25%;
+    text-align: right;
+  }
+  #body .header__btnMenu{
+    display: none;
+  }
+  #body .header__menu-list{
+    background-color: transparent;
+    display: flex;
+    height: inherit;
+    overflow: auto;
+    position: static;
+    visibility: visible;
+    gap: 2rem;
+    margin-left:  2rem;
+  }
+  .header__menu-list-link{
+    font-weight: 700;
+    padding: 1.5625rem 0;
+  }
+  .header__menu-list-link:hover{
+    text-decoration: underline;
+  }
+}

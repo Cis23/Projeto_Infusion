@@ -1,0 +1,28 @@
+.last-articles__title{
+  background-color: var(--verde-claro);
+  padding: 5px 0;
+}
+.last-articles__title h2{
+  color: var(--branco);
+  font-family: var(--font-texto);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+}
+.last-articles__thumbs {
+  background: yellow;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  grid-gap: 0;
+}
+.last-articles__thumbs img{
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width:1024px){
+  .last-articles__thumbs {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

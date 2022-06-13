@@ -1,0 +1,42 @@
+:root{
+  --font-texto: "Open Sans", sans-serif;
+  --font-titulo: "Sintony", sans-serif;
+
+  --branco:#fff;
+  --branco-transparente:rgba(255,255,255, 0.2);
+  --verde-claro: #63c6ae;
+  --preto-cinzeado-escuro: #242a2c;
+  --preto-cinzeado-claro:#242c2c;
+  --cinza-claro-escurecido: #586165;
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: var(--font-texto);
+  line-height: 1.5;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+.container{
+  margin: 0 auto;
+  max-width: 980px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.button{
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  transition: background .5s;;
+}
